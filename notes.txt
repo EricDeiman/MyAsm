@@ -1,0 +1,16 @@
+
+
+[r-dest] = [r_dest] op r_source [r-source]
+add basic op zero; here 1  3
+or  basic op 1; here 0x9   0xb
+adc basic op 2; here 0x11  0x13
+sbb basic op 3; here 0x19  0x1b
+and basic op 4; here 0x21  0x23
+sub basic op 5; here 0x29  0x2b
+xor basic op 6; here 0x31  0x33
+cmp basic op 7; here 0x39  0x3b
+
+
+  2a:	48 c1 04 24 07       	rol    QWORD PTR [rsp],0x7
+but what I wanted was a shl, not rol
+REX.W + C1 /4 ib | SHL r/m64, imm8 | MI | Valid | N.E. | Multiply r/m64 by 2, imm8 times.
